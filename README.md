@@ -1,3 +1,1 @@
-# SESC-Core
-## Charachters
 
