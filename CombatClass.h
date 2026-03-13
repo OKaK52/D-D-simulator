@@ -2,7 +2,7 @@
 #define SESC_CORE_COMBATCLASS_H
 #include <iostream>
 #include <string>
-class CombatClass {
+class CombatClass{
 private:
     std::string name_;
     int power_;
@@ -10,8 +10,6 @@ private:
     int defense_;
 public:
     CombatClass();
-    CombatClass(const std::string& name, int power, int dexterity, int defense);
-    void ChooseClass();
     std::string GetName() const;
     int GetPower() const;
     int GetDexterity() const;
