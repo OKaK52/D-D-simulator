@@ -1,8 +1,14 @@
-//
-// Created by nikit on 06.03.2026.
-//
-
 #ifndef SESC_CORE_CAGE_H
 #define SESC_CORE_CAGE_H
+#include <cmath>
+
+struct Cage {
+    int x;
+    int y;
+
+    int countDistance(Cage target) {
+        return abs(x - target.x) + abs(y - target.y);
+    }
+};
 
 #endif //SESC_CORE_CAGE_H

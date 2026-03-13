@@ -3,3 +3,12 @@
 //
 
 #include "Enemy.h"
+#include "Cage.h"
+// #include "Species.h"
+// #include "Class.h"
+#include <iostream>
+#include <string>
+
+Enemy::Enemy (int id) : id_(id){
+    std::cout << std::endl;
+};
