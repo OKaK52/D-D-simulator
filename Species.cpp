@@ -2,15 +2,11 @@
 #include <iostream>
 #include <limits>
 
-Species::Species() : name_(""), power_(0), dexterity_(0), defense_(0) {}
 
-Species::Species(const std::string& name, dice power, int dexterity, int defense)
-    : name_(name), power_(power), dexterity_(dexterity), defense_(defense) {}
-
-void Species::ChooseSpecies() {
+Species::Species() {
     int choice;
 
-    std::cout << "Choose your species:" << std::endl;
+    std::cout << "Choose your species: " << std::endl;
     std::cout << "1. Elf" << std::endl;
     std::cout << "2. Dwarf" << std::endl;
     std::cout << "3. Human" << std::endl;
@@ -59,7 +55,7 @@ std::string Species::GetName() const {
     return name_;
 }
 
-dice Species::GetPower() const {
+int Species::GetPower() const {
     return power_;
 }
 
@@ -76,7 +72,7 @@ void Species::SetName(const std::string& name) {
     name_ = name;
 }
 
-void Species::SetPower(dice power) {
+void Species::SetPower(int power) {
     power_ = power;
 }
 
