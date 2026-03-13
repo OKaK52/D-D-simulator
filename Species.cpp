@@ -17,21 +17,21 @@ Species::Species() {
     switch(choice) {
         case 1: // Elf
             name_ = "Elf";
-            power_ = 5;
+            maxHealth_ = 20;
             dexterity_ = 10;
             defense_ = 4;
             break;
 
         case 2: // Dwarf
             name_ = "Dwarf";
-            power_ = 9;
+            maxHealth_ = 35;
             dexterity_ = 3;
             defense_ = 8;
             break;
 
         case 3: // Human
             name_ = "Human";
-            power_ = 7;
+            maxHealth_ = 30;
             dexterity_ = 6;
             defense_ = 6;
             break;
@@ -39,14 +39,14 @@ Species::Species() {
         default:
             std::cout << "Invalid choice. Defaulting to Human." << std::endl;
             name_ = "Human";
-            power_ = 7;
+            maxHealth_ = 30;
             dexterity_ = 6;
             defense_ = 6;
             break;
     }
 
     std::cout << "You chose: " << name_ << std::endl;
-    std::cout << "Stats - Power: " << power_
+    std::cout << "Species stats - "
               << ", Dexterity: " << dexterity_
               << ", Defense: " << defense_ << std::endl;
 }
@@ -55,8 +55,8 @@ std::string Species::GetName() const {
     return name_;
 }
 
-int Species::GetPower() const {
-    return power_;
+int Species::GetMaxHealth() const {
+    return maxHealth_;
 }
 
 int Species::GetDexterity() const {
@@ -65,21 +65,4 @@ int Species::GetDexterity() const {
 
 int Species::GetDefense() const {
     return defense_;
-}
-
-
-void Species::SetName(const std::string& name) {
-    name_ = name;
-}
-
-void Species::SetPower(int power) {
-    power_ = power;
-}
-
-void Species::SetDexterity(int dexterity) {
-    dexterity_ = dexterity;
-}
-
-void Species::SetDefense(int defense) {
-    defense_ = defense;
 }

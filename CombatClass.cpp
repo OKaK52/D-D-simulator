@@ -14,14 +14,14 @@ CombatClass::CombatClass() {
         case 1:
             name_ = Warrior;
             power_ = d10x2;
-            atackDistance_ = 1;
+            attackDistance_ = 1;
             dexterity_ = 2;
             defense_ = 20;
             break;
         case 2:
             name_ = Archer;
             power_ = d6x2;
-            atackDistance_ = 6;
+            attackDistance_ = 6;
             dexterity_ = 20;
             defense_ = 5;
             break;
@@ -29,7 +29,7 @@ CombatClass::CombatClass() {
             std::cout << "invalid choose. Defaulting to Warrior" << std::endl;
             name_ = Warrior;
             power_ = d10x2;
-            atackDistance_ = 1;
+            attackDistance_ = 1;
             dexterity_ = 2;
             defense_ = 20;
             break;
@@ -40,11 +40,14 @@ CombatClass::CombatClass() {
 ClassName CombatClass::GetName() const {
     return name_;
 }
+
+int CombatClass::GetAttackDistance() const {
+    return attackDistance_;
+}
+
 DiceGroup CombatClass::GetPower() const {
     return power_;
 }
 int CombatClass::GetDefense() const {
     return defense_;
 }
-
-int get

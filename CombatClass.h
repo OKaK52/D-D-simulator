@@ -10,7 +10,7 @@ class CombatClass{
 private:
     ClassName name_;
     DiceGroup power_;
-    int atackDistance_;
+    int attackDistance_;
     int dexterity_;
     int defense_;
 
@@ -19,6 +19,7 @@ public:
 
     ClassName GetName() const;
     DiceGroup GetPower() const;
+    int GetAttackDistance() const;
     int GetDexterity() const;
     int GetDefense() const;
 };
