@@ -1,8 +1,31 @@
-//
-// Created by korko on 06.03.2026.
-//
+#ifndef SPECIES_H
+#define SPECIES_H
 
-#ifndef SESC_CORE_SPECIES_H
-#define SESC_CORE_SPECIES_H
+#include <string>
 
-#endif //SESC_CORE_SPECIES_H
+class Species {
+private:
+    std::string name_;
+    dice power_;
+    int dexterity_;
+    int defense_;
+
+public:
+    Species();
+
+    Species(const std::string& name, dice power, int dexterity, int defense);
+
+    void ChooseSpecies();
+
+    std::string GetName() const;
+    int GetPower() const;
+    int GetDexterity() const;
+    int GetDefense() const;
+
+    void SetName(const std::string& name);
+    void SetPower(dice power);
+    void SetDexterity(int dexterity);
+    void SetDefense(int defense);
+};
+
+#endif // SPECIES_H
