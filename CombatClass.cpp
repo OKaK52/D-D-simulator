@@ -1,10 +1,7 @@
 #include "CombatClass.h"
 #include <iostream>
 #include <limits>
-CombatClass::CombatClass(): name_(""), power_(0), dexterity_(0), defense_(0) {}
-CombatClass::CombatClass(const std::string& name, int power, int dexterity, int defense):
-name_(name), power_(power), dexterity_(dexterity), defense_(defense) {}
-void CombatClass::ChooseClass() {
+CombatClass::CombatClass() {
     int ameba;
     std::cout << "Choose your CombatClass:" << std::endl;
     std::cout << "1 - Archer" << std::endl;
