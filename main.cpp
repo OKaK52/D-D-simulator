@@ -2,9 +2,9 @@
 // Created by nikit on 11.03.2026.
 //
 #include <iostream>
-#include "Dice.h"
+#include "Enemy.h"
 
 int main() {
-    std::cout << ThrowDiceGroup(d10x3);
+    Enemy enemy = Enemy(1);
     return 0;
 }

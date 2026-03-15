@@ -26,18 +26,28 @@ int ThrowDice(Dice diceType) {
 };
 
 
-const std::map<DiceGroup, std::pair<Dice, int>> diceMultipliyers = {
-    {d4x1, {d4, 1}},    {d6x1, {d6, 1}},    {d8x1, {d8, 1}},    {d10x1, {d10, 1}},    {d12x1, {d12, 1}},    {d20x1, {d20, 1}},
-    {d4x2, {d4, 2}},    {d6x2, {d6, 2}},    {d8x2, {d8, 2}},    {d10x2, {d10, 2}},    {d12x2, {d12, 2}},    {d20x2, {d20, 2}},
-    {d4x3, {d4, 3}},    {d6x3, {d6, 3}},    {d8x3, {d8, 3}},    {d10x3, {d10, 3}},    {d12x3, {d12, 3}},    {d20x3, {d20, 3}},
-    {d4x4, {d4, 4}},    {d6x4, {d6, 4}},    {d8x4, {d8, 4}},    {d10x4, {d10, 4}},    {d12x4, {d12, 4}},    {d20x4, {d20, 4}},
-    {d4x5, {d4, 5}},    {d6x5, {d6, 5}},    {d8x5, {d8, 5}},    {d10x5, {d10, 5}},    {d12x5, {d12, 5}},    {d20x5, {d20, 5}},
+const std::map<DiceGroup, DiceGroupPrmtrs> diceMultipliyers = {
+    {d4x1, {d4, 1}},    {d4x2, {d4, 2}},    {d4x3, {d4, 3}},    {d4x4, {d4, 4}},    {d4x5, {d4, 5}},
+    {d6x1, {d6, 1}},    {d6x2, {d6, 2}},    {d6x3, {d6, 3}},    {d6x4, {d6, 4}},    {d6x5, {d6, 5}},
+    {d8x1, {d8, 1}},    {d8x2, {d8, 2}},    {d8x3, {d8, 3}},    {d8x4, {d8, 4}},    {d8x5, {d8, 5}},
+    {d10x1, {d10, 1}},    {d10x2, {d10, 2}},    {d10x3, {d10, 3}},    {d10x4, {d10, 4}},    {d10x5, {d10, 5}},
+    {d12x1, {d12, 1}},    {d12x2, {d12, 2}},    {d12x3, {d12, 3}},    {d12x4, {d12, 4}},    {d12x5, {d12, 5}},
+    {d20x1, {d20, 1}},    {d20x2, {d20, 2}},    {d20x3, {d20, 3}},    {d20x4, {d20, 4}},    {d20x5, {d20, 5}},
+};
+
+const std::map<std::string, DiceGroup> DiceNames = {
+    {"d4x1", d4x1},  {"d4x2", d4x2},  {"d4x3", d4x3},  {"d4x4", d4x4},  {"d4x5", d4x5},
+    {"d6x1", d6x1},  {"d6x2", d6x2},  {"d6x3", d6x3},  {"d6x4", d6x4},  {"d6x5", d6x5},
+    {"d8x1", d8x1},  {"d8x2", d8x2},  {"d8x3", d8x3},  {"d8x4", d8x4},  {"d8x5", d8x5},
+    {"d10x1", d10x1},  {"d10x2", d10x2},  {"d10x3", d10x3},  {"d10x4", d10x4},  {"d10x5", d10x5},
+    {"d12x1", d12x1},  {"d12x2", d12x2},  {"d12x3", d12x3},  {"d12x4", d12x4},  {"d12x5", d12x5},
+    {"d20x1", d20x1},  {"d20x2", d20x2},  {"d20x3", d20x3},  {"d20x4", d20x4},  {"d20x5", d20x5},
 };
 
 int ThrowDiceGroup(DiceGroup dices) {
     int sum = 0;
-    int multiplier = diceMultipliyers.at(dices).second;
-    Dice diceType = diceMultipliyers.at(dices).first;
+    int multiplier = diceMultipliyers.at(dices).multiplier_;
+    Dice diceType = diceMultipliyers.at(dices).dice_;
     for (int i = 0; i < multiplier; i++) {
         int dice = ThrowDice(diceType);
         sum += dice;
@@ -45,4 +55,21 @@ int ThrowDiceGroup(DiceGroup dices) {
     }
     std::cout << std::endl;
     return sum;
+}
+
+std::istream& operator >> (std::istream& in, DiceGroup& diceGroup) {
+    std::string diceStr;
+    bool valueSetted = false;
+    in >> diceStr;
+    while (!valueSetted) {
+        try {
+            diceGroup = DiceNames.at(diceStr);
+            valueSetted = true;
+        }
+        catch (...) {
+            std::cout << "Uncorrect input, try again - ";
+            in >> diceStr;
+        }
+    }
+    return in;
 }

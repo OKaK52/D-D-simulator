@@ -4,7 +4,7 @@
 
 
 Species::Species() {
-    int choice;
+    unsigned choice;
 
     std::cout << "Choose your species: " << std::endl;
     std::cout << "1. Elf" << std::endl;
@@ -55,14 +55,14 @@ std::string Species::GetName() const {
     return name_;
 }
 
-int Species::GetMaxHealth() const {
+unsigned Species::GetMaxHealth() const {
     return maxHealth_;
 }
 
-int Species::GetDexterity() const {
+unsigned Species::GetDexterity() const {
     return dexterity_;
 }
 
-int Species::GetDefense() const {
+unsigned Species::GetDefense() const {
     return defense_;
 }

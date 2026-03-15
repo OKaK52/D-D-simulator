@@ -14,4 +14,6 @@ add_executable(SESC_Core
         main.cpp
         Dice.cpp
         Dice.h
+        CombatClass.cpp
+        Species.cpp
 )

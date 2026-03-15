@@ -8,25 +8,41 @@
 #include <random>
 #include <map>
 #include "Dice.h"
+#include <iostream>
 
+struct UnsgndParameter {
+    std::string name_;
+    unsigned defualt;
+};
 
 class Enemy {
-private:
-    int id_;
-    int health_;
-    int maxHealth_;
-    DiceGroup totalPower_;
-    int totalDexterity_;
-    int totalDefense_;
-    int atackDistance_;
+protected:
+    unsigned id_;
+    unsigned health_;
+    unsigned maxHealth_;
+    DiceGroup power_;
+    unsigned dexterity_;
+    unsigned defense_;
+    unsigned attackDistance_;
     Cage position_;
+
 public:
-    Enemy(int id);
+    Enemy(unsigned id);
     void Move();
     bool CheckDist();
+    unsigned CountDamage(DiceGroup);
     void Attack();
-    int CountDamag(DiceGroup);
-    int GetPosition();
+    unsigned GetPosition();
+
+private:
+    unsigned SetInt(std::string str, unsigned defualt);
+
+    void SetMaxHealth();
+    void SetPower();
+    void SetDexterity();
+    void SetDefense();
+    void SetAttackDistance();
+    void SetPosition();
 };
 
 

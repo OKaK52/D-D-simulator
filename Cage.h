@@ -3,8 +3,8 @@
 #include <cmath>
 
 struct Cage {
-    int x;
-    int y;
+    unsigned x;
+    unsigned y;
 
     int countDistance(Cage target) {
         return abs(x - target.x) + abs(y - target.y);

@@ -4,7 +4,7 @@
 #include <Dice.h>
 
 CombatClass::CombatClass() {
-    int ameba;
+    unsigned ameba;
     std::cout << "Choose your CombatClass:" << std::endl;
     std::cout << "1 - Archer" << std::endl;
     std::cout << "2 - Warrior" << std::endl;
@@ -41,13 +41,13 @@ ClassName CombatClass::GetName() const {
     return name_;
 }
 
-int CombatClass::GetAttackDistance() const {
+unsigned CombatClass::GetAttackDistance() const {
     return attackDistance_;
 }
 
 DiceGroup CombatClass::GetPower() const {
     return power_;
 }
-int CombatClass::GetDefense() const {
+unsigned CombatClass::GetDefense() const {
     return defense_;
 }

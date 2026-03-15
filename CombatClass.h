@@ -10,17 +10,17 @@ class CombatClass{
 private:
     ClassName name_;
     DiceGroup power_;
-    int attackDistance_;
-    int dexterity_;
-    int defense_;
+    unsigned attackDistance_;
+    unsigned dexterity_;
+    unsigned defense_;
 
 public:
     CombatClass();
 
     ClassName GetName() const;
     DiceGroup GetPower() const;
-    int GetAttackDistance() const;
-    int GetDexterity() const;
-    int GetDefense() const;
+    unsigned GetAttackDistance() const;
+    unsigned GetDexterity() const;
+    unsigned GetDefense() const;
 };
 #endif //SESC_CORE_COMBATCLASS_H

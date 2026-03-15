@@ -7,17 +7,17 @@
 class Species {
 private:
     std::string name_;
-    int maxHealth_;
-    int dexterity_;
-    int defense_;
+    unsigned maxHealth_;
+    unsigned dexterity_;
+    unsigned defense_;
 
 public:
     Species();
 
     std::string GetName() const;
-    int GetMaxHealth() const;
-    int GetDexterity() const;
-    int GetDefense() const;
+    unsigned GetMaxHealth() const;
+    unsigned GetDexterity() const;
+    unsigned GetDefense() const;
 };
 
 #endif // SPECIES_H
