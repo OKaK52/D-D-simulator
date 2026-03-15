@@ -1,13 +1,12 @@
 #include "CombatClass.h"
 #include <iostream>
-#include <limits>
 #include <Dice.h>
 
 CombatClass::CombatClass() {
-    unsigned ameba;
+    int ameba;
     std::cout << "Choose your CombatClass:" << std::endl;
-    std::cout << "1 - Archer" << std::endl;
-    std::cout << "2 - Warrior" << std::endl;
+    std::cout << "1 - Warrior" << std::endl;
+    std::cout << "2 - Archer" << std::endl;
     std::cout << "Enter your choose(1-2):" << std::endl;
     std::cin >> ameba;
     switch(ameba) {
@@ -35,7 +34,11 @@ CombatClass::CombatClass() {
             break;
     }
     std::cout << "You chose:" << name_ << std::endl;
-    std::cout << "Stats: power:" << power_ << "dexterity:" << dexterity_ << "defense:" << defense_ << std::endl;
+    std::cout << "Combat class's stats:" << std::endl
+    << "Power: " << power_ << std::endl
+    << "Attack distance: " << attackDistance_ << std::endl
+    << "Dexterity: " << dexterity_ << std::endl
+    << "Defense: " << defense_ << std::endl;
 }
 ClassName CombatClass::GetName() const {
     return name_;
@@ -50,4 +53,8 @@ DiceGroup CombatClass::GetPower() const {
 }
 unsigned CombatClass::GetDefense() const {
     return defense_;
+}
+
+unsigned CombatClass::GetDexterity() const {
+    return dexterity_;
 }

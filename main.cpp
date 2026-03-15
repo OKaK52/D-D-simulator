@@ -3,8 +3,9 @@
 //
 #include <iostream>
 #include "Enemy.h"
+#include "Hero.h"
 
 int main() {
-    Enemy enemy = Enemy(1);
+    Hero hero = Hero(1);
     return 0;
 }

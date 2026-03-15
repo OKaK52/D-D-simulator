@@ -4,7 +4,7 @@
 #include <string>
 #include "Dice.h"
 
-enum ClassName {Warrior, Archer};
+enum ClassName {Warrior = 1, Archer = 2};
 
 class CombatClass{
 private:

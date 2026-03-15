@@ -4,7 +4,7 @@
 
 
 Species::Species() {
-    unsigned choice;
+    int choice;
 
     std::cout << "Choose your species: " << std::endl;
     std::cout << "1. Elf" << std::endl;
@@ -46,9 +46,10 @@ Species::Species() {
     }
 
     std::cout << "You chose: " << name_ << std::endl;
-    std::cout << "Species stats - "
-              << ", Dexterity: " << dexterity_
-              << ", Defense: " << defense_ << std::endl;
+    std::cout << "Species stats: " << std::endl
+              << "MaxHealth: " << maxHealth_ << std::endl
+              << "Dexterity: " << dexterity_ << std::endl
+              << "Defense: " << defense_ << std::endl;
 }
 
 std::string Species::GetName() const {

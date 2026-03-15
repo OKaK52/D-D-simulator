@@ -28,13 +28,15 @@ protected:
 
 public:
     Enemy(unsigned id);
+    Enemy(){};
+
     void Move();
     bool CheckDist();
     unsigned CountDamage(DiceGroup);
     void Attack();
     unsigned GetPosition();
 
-private:
+protected:
     unsigned SetInt(std::string str, unsigned defualt);
 
     void SetMaxHealth();

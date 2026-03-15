@@ -35,14 +35,6 @@ const std::map<DiceGroup, DiceGroupPrmtrs> diceMultipliyers = {
     {d20x1, {d20, 1}},    {d20x2, {d20, 2}},    {d20x3, {d20, 3}},    {d20x4, {d20, 4}},    {d20x5, {d20, 5}},
 };
 
-const std::map<std::string, DiceGroup> DiceNames = {
-    {"d4x1", d4x1},  {"d4x2", d4x2},  {"d4x3", d4x3},  {"d4x4", d4x4},  {"d4x5", d4x5},
-    {"d6x1", d6x1},  {"d6x2", d6x2},  {"d6x3", d6x3},  {"d6x4", d6x4},  {"d6x5", d6x5},
-    {"d8x1", d8x1},  {"d8x2", d8x2},  {"d8x3", d8x3},  {"d8x4", d8x4},  {"d8x5", d8x5},
-    {"d10x1", d10x1},  {"d10x2", d10x2},  {"d10x3", d10x3},  {"d10x4", d10x4},  {"d10x5", d10x5},
-    {"d12x1", d12x1},  {"d12x2", d12x2},  {"d12x3", d12x3},  {"d12x4", d12x4},  {"d12x5", d12x5},
-    {"d20x1", d20x1},  {"d20x2", d20x2},  {"d20x3", d20x3},  {"d20x4", d20x4},  {"d20x5", d20x5},
-};
 
 int ThrowDiceGroup(DiceGroup dices) {
     int sum = 0;
@@ -57,13 +49,24 @@ int ThrowDiceGroup(DiceGroup dices) {
     return sum;
 }
 
+
+const std::map<std::string, DiceGroup> Name_DiceGruop = {
+    {"d4x1", d4x1},  {"d4x2", d4x2},  {"d4x3", d4x3},  {"d4x4", d4x4},  {"d4x5", d4x5},
+    {"d6x1", d6x1},  {"d6x2", d6x2},  {"d6x3", d6x3},  {"d6x4", d6x4},  {"d6x5", d6x5},
+    {"d8x1", d8x1},  {"d8x2", d8x2},  {"d8x3", d8x3},  {"d8x4", d8x4},  {"d8x5", d8x5},
+    {"d10x1", d10x1},  {"d10x2", d10x2},  {"d10x3", d10x3},  {"d10x4", d10x4},  {"d10x5", d10x5},
+    {"d12x1", d12x1},  {"d12x2", d12x2},  {"d12x3", d12x3},  {"d12x4", d12x4},  {"d12x5", d12x5},
+    {"d20x1", d20x1},  {"d20x2", d20x2},  {"d20x3", d20x3},  {"d20x4", d20x4},  {"d20x5", d20x5},
+};
+
+
 std::istream& operator >> (std::istream& in, DiceGroup& diceGroup) {
     std::string diceStr;
     bool valueSetted = false;
     in >> diceStr;
     while (!valueSetted) {
         try {
-            diceGroup = DiceNames.at(diceStr);
+            diceGroup = Name_DiceGruop.at(diceStr);
             valueSetted = true;
         }
         catch (...) {
@@ -72,4 +75,19 @@ std::istream& operator >> (std::istream& in, DiceGroup& diceGroup) {
         }
     }
     return in;
+}
+
+const std::map<DiceGroup, std::string> DiceGroup_Name = {
+    {d4x1, "d4x1"},  {d4x2, "d4x2"},  {d4x3, "d4x3"},  {d4x4, "d4x4"},  {d4x5, "d4x5"},
+    {d6x1, "d6x1"},  {d6x2, "d6x2"},  {d6x3, "d6x3"},  {d6x4, "d6x4"},  {d6x5, "d6x5"},
+    {d8x1, "d8x1"},  {d8x2, "d8x2"},  {d8x3, "d8x3"},  {d8x4, "d8x4"},  {d8x5, "d8x5"},
+    {d10x1, "d10x1"},  {d10x2, "d10x2"},  {d10x3, "d10x3"},  {d10x4, "d10x4"},  {d10x5, "d10x5"},
+    {d12x1, "d12x1"},  {d12x2, "d12x2"},  {d12x3, "d12x3"},  {d12x4, "d12x4"},  {d12x5, "d12x5"},
+    {d20x1, "d20x1"},  {d20x2, "d20x2"},  {d20x3, "d20x3"},  {d20x4, "d20x4"},  {d20x5, "d20x5"},
+};
+
+std::ostream& operator << (std::ostream& out, DiceGroup diceGroup) {
+    std::string diceStr;
+    diceStr = DiceGroup_Name.at(diceGroup);
+    return out << diceStr;
 }

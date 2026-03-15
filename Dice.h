@@ -27,6 +27,7 @@ struct DiceGroupPrmtrs {
 int ThrowDiceGroup(DiceGroup dices);
 
 std::istream& operator >> (std::istream& in, DiceGroup& person);
+std::ostream& operator << (std::ostream& out, DiceGroup diceGroup);
 
 
 #endif //SESC_CORE_DICE_H
