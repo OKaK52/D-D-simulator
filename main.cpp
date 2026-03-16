@@ -2,8 +2,8 @@
 // Created by nikit on 11.03.2026.
 //
 #include <iostream>
-#include "Unit.h"
-#include "Hero.h"
+#include "Units/Unit.h"
+#include "Units/Hero.h"
 
 int main() {
     Hero Nikita(2);

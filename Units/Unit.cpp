@@ -2,14 +2,11 @@
 // Created by nikit on 11.03.2026.
 //
 
-#include "Unit.h"
-#include "Cage.h"
-// #include "Species.h"
-// #include "Class.h"
+#include "../Units/Unit.h"
+#include "../Units/Helpers/Cage.h"
 #include <iostream>
 #include <string>
-#include <map>
-#include "Cage.h"
+#include "../Units/Helpers/Dice.h"
 
 
 unsigned Unit::SetInt(std::string str, unsigned defualt = 1) {
@@ -111,6 +108,7 @@ void Unit::Attack(Unit& target) {
             target.Damage(damage);
         }
     }
+    std::cout << std::endl;
 }
 
 
@@ -122,4 +120,4 @@ unsigned Unit::GetDexterity() {return dexterity_;}
 unsigned Unit::GetDefense() {return defense_;}
 unsigned Unit::GetAttackDistance() {return attackDistance_;}
 Cage Unit::GetPosition() {return position_;}
-bool Unit::IsAlive() {return isAlive_};
+bool Unit::IsAlive() {return isAlive_;}

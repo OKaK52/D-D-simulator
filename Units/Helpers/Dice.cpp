@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 #include <random>
-#include "Dice.h"
+#include "../Helpers/Dice.h"
 
 #include <chrono>
 #include <map>

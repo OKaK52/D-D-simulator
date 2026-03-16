@@ -1,6 +1,6 @@
 #include "CombatClass.h"
 #include <iostream>
-#include <Dice.h>
+#include "Dice.h"
 
 CombatClass::CombatClass() {
     int ameba;

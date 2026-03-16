@@ -2,7 +2,7 @@
 // Created by nikit on 11.03.2026.
 //
 
-#include "Hero.h"
+#include "../Units/Hero.h"
 
 unsigned mean (const unsigned& a, const unsigned& b) {
     return (a + b) / 2 + (a + b) % 2;

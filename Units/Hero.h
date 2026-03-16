@@ -4,9 +4,9 @@
 
 #ifndef SESC_CORE_HERO_H
 #define SESC_CORE_HERO_H
-#include "Unit.h"
-#include "CombatClass.h"
-#include "Species.h"
+#include "../Units/Unit.h"
+#include "../Units/Helpers/CombatClass.h"
+#include "Helpers/Species.h"
 
 class Hero : public Unit {
 private:

@@ -4,9 +4,9 @@
 
 #ifndef SESC_CORE_ENEMY_H
 #define SESC_CORE_ENEMY_H
-#include "Cage.h"
+#include "../Units/Helpers/Cage.h"
 #include <random>
-#include "Dice.h"
+#include "../Units/Helpers/Dice.h"
 #include <iostream>
 
 struct UnsgndParameter {
