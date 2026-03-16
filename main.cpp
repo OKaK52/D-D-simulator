@@ -6,6 +6,6 @@
 #include "Hero.h"
 
 int main() {
-    Hero hero = Hero(1);
+    Hero hero(1);
     return 0;
 }

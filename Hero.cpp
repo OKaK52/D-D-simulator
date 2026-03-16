@@ -10,8 +10,6 @@ unsigned mean (const unsigned& a, const unsigned& b) {
 
 Hero::Hero (unsigned id) {
     id_ = id;
-    combatClass_ = CombatClass();
-    species_ = Species();
     maxHealth_ = species_.GetMaxHealth();
     health_ = maxHealth_;
     dexterity_ = species_.GetDexterity() + combatClass_.GetDexterity();
