@@ -7,8 +7,8 @@ include_directories(.)
 
 add_executable(SESC_Core
         Cage.h
-        Enemy.cpp
-        Enemy.h
+        Unit.cpp
+        Unit.h
         Hero.cpp
         Hero.h
         main.cpp

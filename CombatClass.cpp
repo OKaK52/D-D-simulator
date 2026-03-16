@@ -15,14 +15,14 @@ CombatClass::CombatClass() {
             power_ = d10x2;
             attackDistance_ = 1;
             dexterity_ = 2;
-            defense_ = 20;
+            defense_ = 5;
             break;
         case 2:
             name_ = Archer;
             power_ = d6x2;
             attackDistance_ = 6;
-            dexterity_ = 20;
-            defense_ = 5;
+            dexterity_ = 5;
+            defense_ = 4;
             break;
         default:
             std::cout << "invalid choose. Defaulting to Warrior" << std::endl;

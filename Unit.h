@@ -14,8 +14,9 @@ struct UnsgndParameter {
     unsigned defualt;
 };
 
-class Enemy {
+class Unit {
 protected:
+    bool isAlive_;
     unsigned id_;
     unsigned health_;
     unsigned maxHealth_;
@@ -26,15 +27,17 @@ protected:
     Cage position_;
 
 public:
-    Enemy(unsigned id);
-    Enemy(){};
+    std::string name_;
+
+    Unit(unsigned id);
+    Unit(){};
 
     void Move();
-    bool CheckDist();
-    unsigned CountDamage(Enemy attackedEnemy);
-    bool CheckBreaking(Enemy attackedEnemy);
+    bool CheckDist(Unit target);
+    unsigned CountDamage();
+    bool CheckBreaking(Unit target);
     void Damage(unsigned damage);
-    void Attack(Enemy attackedEnemy);
+    void Attack(Unit& target);
 
 
     unsigned GetId();
@@ -45,10 +48,12 @@ public:
     unsigned GetDefense();
     unsigned GetAttackDistance();
     Cage GetPosition();
+    bool IsAlive();
 
 protected:
     unsigned SetInt(std::string str, unsigned defualt);
 
+    void SetName();
     void SetMaxHealth();
     void SetPower();
     void SetDexterity();

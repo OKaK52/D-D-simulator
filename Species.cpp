@@ -7,26 +7,26 @@ Species::Species() {
     int choice;
 
     std::cout << "Choose your species: " << std::endl;
-    std::cout << "1. Elf" << std::endl;
-    std::cout << "2. Dwarf" << std::endl;
+    std::cout << "1. Dwarf" << std::endl;
+    std::cout << "2. Elf" << std::endl;
     std::cout << "3. Human" << std::endl;
     std::cout << "Enter your choice (1-3): ";
 
     std::cin >> choice;
 
     switch(choice) {
-        case 1: // Elf
-            name_ = "Elf";
-            maxHealth_ = 20;
-            dexterity_ = 10;
-            defense_ = 4;
-            break;
-
-        case 2: // Dwarf
+        case 1: // Dwarf
             name_ = "Dwarf";
             maxHealth_ = 35;
             dexterity_ = 3;
-            defense_ = 8;
+            defense_ = 3;
+            break;
+
+        case 2: // Elf
+            name_ = "Elf";
+            maxHealth_ = 20;
+            dexterity_ = 10;
+            defense_ = 0;
             break;
 
         case 3: // Human

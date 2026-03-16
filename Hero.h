@@ -4,11 +4,11 @@
 
 #ifndef SESC_CORE_HERO_H
 #define SESC_CORE_HERO_H
-#include "Enemy.h"
+#include "Unit.h"
 #include "CombatClass.h"
 #include "Species.h"
 
-class Hero : public Enemy {
+class Hero : public Unit {
 private:
     CombatClass combatClass_;
     Species species_;

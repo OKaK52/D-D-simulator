@@ -37,6 +37,7 @@ const std::map<DiceGroup, DiceGroupPrmtrs> diceMultipliyers = {
 
 
 unsigned ThrowDiceGroup(DiceGroup dices) {
+    std::cout << "Throwing dices " << dices << "... ";
     unsigned sum = 0;
     unsigned multiplier = diceMultipliyers.at(dices).multiplier_;
     Dice diceType = diceMultipliyers.at(dices).dice_;

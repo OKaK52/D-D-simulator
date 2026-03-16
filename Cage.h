@@ -3,11 +3,11 @@
 #include <cmath>
 
 struct Cage {
-    unsigned x;
-    unsigned y;
+    int x;
+    int y;
 
-    int countDistance(Cage target) {
-        return abs(x - target.x) + abs(y - target.y);
+    static unsigned CountDistance(Cage cage1, Cage cage2) {
+        return abs(cage1.x - cage2.x) + abs(cage1.y - cage2.y);
     }
 };
 
