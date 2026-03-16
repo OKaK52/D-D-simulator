@@ -6,12 +6,14 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(SESC_Core
-        Cage.h
-        Enemy.cpp
-        Enemy.h
-        Hero.cpp
-        Hero.h
+        Units/Helpers/Cage.h
+        Units/Unit.cpp
+        Units/Unit.h
+        Units/Hero.cpp
+        Units/Hero.h
         main.cpp
-        Dice.cpp
-        Dice.h
+        Units/Helpers/Dice.cpp
+        Units/Helpers/Dice.h
+        Units/Helpers/CombatClass.cpp
+        Units/Helpers/Species.cpp
 )

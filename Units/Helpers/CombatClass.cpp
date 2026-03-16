@@ -1,0 +1,60 @@
+#include "CombatClass.h"
+#include <iostream>
+#include "Dice.h"
+
+CombatClass::CombatClass() {
+    int ameba;
+    std::cout << "Choose your CombatClass:" << std::endl;
+    std::cout << "1 - Warrior" << std::endl;
+    std::cout << "2 - Archer" << std::endl;
+    std::cout << "Enter your choose(1-2):" << std::endl;
+    std::cin >> ameba;
+    switch(ameba) {
+        case 1:
+            name_ = Warrior;
+            power_ = d10x2;
+            attackDistance_ = 1;
+            dexterity_ = 2;
+            defense_ = 5;
+            break;
+        case 2:
+            name_ = Archer;
+            power_ = d6x2;
+            attackDistance_ = 6;
+            dexterity_ = 5;
+            defense_ = 4;
+            break;
+        default:
+            std::cout << "invalid choose. Defaulting to Warrior" << std::endl;
+            name_ = Warrior;
+            power_ = d10x2;
+            attackDistance_ = 1;
+            dexterity_ = 2;
+            defense_ = 20;
+            break;
+    }
+    std::cout << "You chose:" << name_ << std::endl;
+    std::cout << "Combat class's stats:" << std::endl
+    << "Power: " << power_ << std::endl
+    << "Attack distance: " << attackDistance_ << std::endl
+    << "Dexterity: " << dexterity_ << std::endl
+    << "Defense: " << defense_ << std::endl;
+}
+ClassName CombatClass::GetName() const {
+    return name_;
+}
+
+unsigned CombatClass::GetAttackDistance() const {
+    return attackDistance_;
+}
+
+DiceGroup CombatClass::GetPower() const {
+    return power_;
+}
+unsigned CombatClass::GetDefense() const {
+    return defense_;
+}
+
+unsigned CombatClass::GetDexterity() const {
+    return dexterity_;
+}
