@@ -60,3 +60,38 @@ Enemy::Enemy (unsigned id) : id_(id){
     SetAttackDistance();
     SetPosition();
 };
+
+bool Enemy::CheckDist() {
+
+}
+
+bool Enemy::CheckBreaking(Enemy attackedEnemy) {
+    unsigned value = ThrowDiceGroup(power_);
+    return value > attackedEnemy.GetDefense();
+}
+
+unsigned Enemy::CountDamage(Enemy attackedEnemy) {
+    return ThrowDiceGroup(power_);
+};
+
+void Enemy::Damage(unsigned damage) {
+    if (maxHealth_ > damage) health_ = health_ - damage;
+    else health_ = 0;
+}
+
+void Enemy::Attack(Enemy attackedEnemy) {
+    bool breaked = CheckBreaking((attackedEnemy));
+    if (breaked) {
+        unsigned damage = CountDamage(attackedEnemy);
+        attackedEnemy.Damage(damage);
+    }
+}
+
+unsigned Enemy::GetId() {return id_;}
+unsigned Enemy::GetHealth() {return health_;}
+unsigned Enemy::GetMaxHealth() {return maxHealth_;}
+DiceGroup Enemy::GetPower() {return power_;}
+unsigned Enemy::GetDexterity() {return dexterity_;}
+unsigned Enemy::GetDefense() {return defense_;}
+unsigned Enemy::GetAttackDistance() {return attackDistance_;}
+Cage Enemy::GetPosition() {return position_;}

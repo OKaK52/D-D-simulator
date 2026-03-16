@@ -6,7 +6,6 @@
 #define SESC_CORE_ENEMY_H
 #include "Cage.h"
 #include <random>
-#include <map>
 #include "Dice.h"
 #include <iostream>
 
@@ -32,9 +31,20 @@ public:
 
     void Move();
     bool CheckDist();
-    unsigned CountDamage(DiceGroup);
-    void Attack();
-    unsigned GetPosition();
+    unsigned CountDamage(Enemy attackedEnemy);
+    bool CheckBreaking(Enemy attackedEnemy);
+    void Damage(unsigned damage);
+    void Attack(Enemy attackedEnemy);
+
+
+    unsigned GetId();
+    unsigned GetHealth();
+    unsigned GetMaxHealth();
+    DiceGroup GetPower();
+    unsigned GetDexterity();
+    unsigned GetDefense();
+    unsigned GetAttackDistance();
+    Cage GetPosition();
 
 protected:
     unsigned SetInt(std::string str, unsigned defualt);
@@ -45,6 +55,7 @@ protected:
     void SetDefense();
     void SetAttackDistance();
     void SetPosition();
+    void SetHealth(int health);
 };
 
 

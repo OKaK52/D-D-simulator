@@ -4,12 +4,11 @@
 
 #ifndef SESC_CORE_DICE_H
 #define SESC_CORE_DICE_H
-#include <iostream>
 
 
-enum Dice: int {d4 = 4, d6 = 6, d8 = 8, d10 = 10, d12 = 12, d20 = 20};
+enum Dice: unsigned {d4 = 4, d6 = 6, d8 = 8, d10 = 10, d12 = 12, d20 = 20};
 
-int ThrowDice(Dice diceType);
+unsigned ThrowDice(Dice diceType);
 
 enum DiceGroup {
     d4x1, d6x1, d8x1, d10x1, d12x1, d20x1,
@@ -24,7 +23,7 @@ struct DiceGroupPrmtrs {
     int multiplier_;
 };
 
-int ThrowDiceGroup(DiceGroup dices);
+unsigned ThrowDiceGroup(DiceGroup dices);
 
 std::istream& operator >> (std::istream& in, DiceGroup& person);
 std::ostream& operator << (std::ostream& out, DiceGroup diceGroup);

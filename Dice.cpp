@@ -11,9 +11,9 @@
 
 
 
-int ThrowDice(Dice diceType) {
+unsigned ThrowDice(Dice diceType) {
     // Определить диапазон
-    int max = diceType;
+    unsigned max = diceType;
 
     // Инициализировать генератор случайных чисел
     // std::random_device rd;
@@ -21,7 +21,7 @@ int ThrowDice(Dice diceType) {
     std::uniform_int_distribution<> distrib(1, max);
 
     // Сгенерировать случайное число в диапазоне [min, max]
-    int randomValue = distrib(gen);
+    unsigned randomValue = distrib(gen);
     return randomValue;
 };
 
@@ -36,12 +36,12 @@ const std::map<DiceGroup, DiceGroupPrmtrs> diceMultipliyers = {
 };
 
 
-int ThrowDiceGroup(DiceGroup dices) {
-    int sum = 0;
-    int multiplier = diceMultipliyers.at(dices).multiplier_;
+unsigned ThrowDiceGroup(DiceGroup dices) {
+    unsigned sum = 0;
+    unsigned multiplier = diceMultipliyers.at(dices).multiplier_;
     Dice diceType = diceMultipliyers.at(dices).dice_;
-    for (int i = 0; i < multiplier; i++) {
-        int dice = ThrowDice(diceType);
+    for (unsigned i = 0; i < multiplier; i++) {
+        unsigned dice = ThrowDice(diceType);
         sum += dice;
         std::cout << dice << " ";
     }
