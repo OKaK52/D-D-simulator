@@ -48,6 +48,13 @@ void Unit::SetPosition() {
     std::cout << "Set position for yor enemy, x y (for example: 3 5) - ";
     std::cin >> position_.x >> position_.y;;
 }
+void Unit::SetAvatar() {
+    std::cout << "Set char-avatar by ASCII-code: ";
+    int code;
+    std::cin >> code;
+    avatar_ = char(code);
+    name_ = avatar_;
+}
 
 
 Unit::Unit (unsigned id) : id_(id){
@@ -121,3 +128,4 @@ unsigned Unit::GetDefense() {return defense_;}
 unsigned Unit::GetAttackDistance() {return attackDistance_;}
 Cage Unit::GetPosition() {return position_;}
 bool Unit::IsAlive() {return isAlive_;}
+char Unit::GetAvatar() {return avatar_;}

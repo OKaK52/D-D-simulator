@@ -37,17 +37,18 @@ string Field::DrawField() {
     UpdateField();
     string FieldImage;
     for (int i = 0; i < field_.size(); i++) {
-        FieldImage += "[";
+        FieldImage += "|";
         for (int j = 0; j < field_[i].size(); j++) {
-            char c = '0';
+            char c = '__';
             if (field_[i][j] != 0) {
                 int id = field_[i][j] - 1;
                 Hero hero = heroes_[id];
-                c = to_string(hero.GetId())[0];
+                // c = to_string(hero.GetId())[0];
+                c = hero.GetAvatar();
             }
             FieldImage += c;
-            if (j < field_[i].size() - 1) FieldImage += "] [";
-            else FieldImage += "]";
+            if (j < field_[i].size() - 1) FieldImage += "|";
+            else FieldImage += "|";
         }
 
         if (i < field_.size() - 1) FieldImage += '\n';

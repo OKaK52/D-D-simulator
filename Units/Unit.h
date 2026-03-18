@@ -25,6 +25,7 @@ protected:
     unsigned defense_;
     unsigned attackDistance_;
     Cage position_;
+    char avatar_;
 
 public:
     std::string name_;
@@ -49,6 +50,7 @@ public:
     unsigned GetAttackDistance();
     Cage GetPosition();
     bool IsAlive();
+    char GetAvatar();
 
 protected:
     unsigned SetInt(std::string str, unsigned defualt);
@@ -61,6 +63,7 @@ protected:
     void SetAttackDistance();
     void SetPosition();
     void SetHealth(int health);
+    void SetAvatar();
 };
 
 
