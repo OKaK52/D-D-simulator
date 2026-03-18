@@ -8,6 +8,6 @@
 
 int main() {
     Field field = Field(2);
-    cout << field.DrawField();
+    cout << field.DrawField() << std::endl;
     return 0;
 }

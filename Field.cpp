@@ -26,14 +26,15 @@ Field::Field(int cntPlayers) {
 
 
 void Field::UpdateField() {
-    for (int i = 0; i < field_.size(); i++) {
+    for (int i = 0; i < heroes_.size(); i++) {
         Hero hero = heroes_[i];
         Cage pos = hero.GetPosition();
         field_[pos.x][pos.y] = i + 1;
     }
 }
 
-string Field::DrawField() const{
+string Field::DrawField() {
+    UpdateField();
     string FieldImage;
     for (int i = 0; i < field_.size(); i++) {
         FieldImage += "[";
@@ -42,17 +43,14 @@ string Field::DrawField() const{
             if (field_[i][j] != 0) {
                 int id = field_[i][j] - 1;
                 Hero hero = heroes_[id];
-                c = hero.GetId();
-                if (j < field_[i].size() - 1) {
-                    FieldImage += "] [";
-                }
+                c = to_string(hero.GetId())[0];
             }
             FieldImage += c;
+            if (j < field_[i].size() - 1) FieldImage += "] [";
+            else FieldImage += "]";
         }
 
-        if (i < field_.size() - 1) {
-            FieldImage += '\n';
-        }
+        if (i < field_.size() - 1) FieldImage += '\n';
     }
 
     return FieldImage;

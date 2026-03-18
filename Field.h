@@ -22,7 +22,7 @@ public:
     Field(vector<vector<int>> field, vector<Hero> heroes);
     Field(int cntPlayers);
 
-    string DrawField() const;
+    string DrawField();
     vector<vector<int>> ChangeCage(pair<int, int> CurrentPosition, pair<int, int> NextPosition);
     void Start();
     void UpdateField();
