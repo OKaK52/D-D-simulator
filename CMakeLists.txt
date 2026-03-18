@@ -16,4 +16,6 @@ add_executable(SESC_Core
         Units/Helpers/Dice.h
         Units/Helpers/CombatClass.cpp
         Units/Helpers/Species.cpp
+        Field.cpp
+        #        Field.cpp
 )

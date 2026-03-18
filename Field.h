@@ -7,21 +7,26 @@
 #include <vector>
 #include <string>
 #include <utility>
+
+#include "Units/Hero.h"
 using namespace std;
 
 
 class Field{
-    vector<Heroes> heroes;
-    vector<vector<int>> field;
-    int FieldSize;
-    pair<int, int> CurrentPosition;
-    pair<int, int> NextPosition;
+    vector<Hero> heroes_;
+    vector<vector<int>> field_;
+    int fieldSize_ = 3;
+    int currentHero_ = 0;
 
 public:
-    Field(vector<vector<int>> field, vector<Heroes> heroes);
-    pair<int, int> GetPosition();
-    string DrawField();
-    vector<vector<int>> ChangeField(pair<int, int> CurrentPosition, pair<int, int> NextPosition);
+    Field(vector<vector<int>> field, vector<Hero> heroes);
+    Field(int cntPlayers);
+
+    string DrawField() const;
+    vector<vector<int>> ChangeCage(pair<int, int> CurrentPosition, pair<int, int> NextPosition);
+    void Start();
+    void UpdateField();
+
 };
 
 

@@ -4,11 +4,10 @@
 #include <iostream>
 #include "Units/Unit.h"
 #include "Units/Hero.h"
+#include "Field.h"
 
 int main() {
-    Hero Nikita(2);
-    Hero Egor(1);
-    Nikita.Attack(Egor);
-    Egor.Attack(Nikita);
+    Field field = Field(2);
+    cout << field.DrawField();
     return 0;
 }
