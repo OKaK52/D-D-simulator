@@ -34,7 +34,7 @@ public:
     int GetTotalPower() const;
     int GetTotalDefense() const;
 
-    void action(std::vector<Hero>& heroes);  // <- ЭТОТ МЕТОД ДОЛЖЕН БЫТЬ
+    void action(std::vector<Hero>& heroes);
     void Attack(Hero& target);
     void TakeDamage(int damage);
     void PrintStats();

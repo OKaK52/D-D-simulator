@@ -1,14 +1,15 @@
 #include <iostream>
 #include <cstdlib>
+#include <iostream>
+#include <cstdlib>
 #include <ctime>
 #include "Field.h"
 
 int main() {
     srand(time(NULL));
 
-    std::cout << "╔════════════════════════════════╗\n";
-    std::cout << "║      HERO BATTLE ARENA         ║\n";
-    std::cout << "╚════════════════════════════════╝\n\n";
+    std::cout << "Welcome to the DND";
+
 
     int players;
     std::cout << "Enter number of players (2-6): ";
