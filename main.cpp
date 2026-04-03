@@ -1,10 +1,24 @@
-//
-// Created by nikit on 11.03.2026.
-//
 #include <iostream>
-#include "Dice.h"
+#include <cstdlib>
+#include <ctime>
+#include "Field.h"
 
 int main() {
-    std::cout << ThrowDiceGroup(d10x3);
+    srand(time(NULL));
+
+    std::cout << "╔════════════════════════════════╗\n";
+    std::cout << "║      HERO BATTLE ARENA         ║\n";
+    std::cout << "╚════════════════════════════════╝\n\n";
+
+    int players;
+    std::cout << "Enter number of players (2-6): ";
+    std::cin >> players;
+
+    if (players < 2) players = 2;
+    if (players > 6) players = 6;
+
+    Field game(players);
+    game.StartGame();
+
     return 0;
 }

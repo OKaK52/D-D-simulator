@@ -11,4 +11,4 @@ struct Cage {
     }
 };
 
-#endif //SESC_CORE_CAGE_H
+#endif

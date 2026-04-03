@@ -1,17 +1,10 @@
-cmake_minimum_required(VERSION 4.1)
-project(SESC_Core)
-
-set(CMAKE_CXX_STANDARD 14)
-
-include_directories(.)
-
 add_executable(SESC_Core
-        Cage.h
-        Enemy.cpp
-        Enemy.h
-        Hero.cpp
-        Hero.h
         main.cpp
-        Dice.cpp
-        Dice.h
+        Field.cpp
+        Hero.cpp          # ЭТОТ ФАЙЛ ДОЛЖЕН БЫТЬ!
+        Species.cpp
+        CombatClass.cpp
+        Cage.h            # .h файлы тоже можно добавить
+        # Dice.cpp        # если есть
+        # Enemy.cpp       # если есть
 )

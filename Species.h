@@ -1,6 +1,5 @@
 #ifndef SPECIES_H
 #define SPECIES_H
-
 #include <string>
 
 class Species {
@@ -12,16 +11,11 @@ private:
 
 public:
     Species();
-
-    std::string GetName() const;
-    int GetPower() const;
-    int GetDexterity() const;
-    int GetDefense() const;
-
-    void SetName(const std::string& name);
-    void SetPower(int power);
-    void SetDexterity(int dexterity);
-    void SetDefense(int defense);
+    void ChooseSpecies();
+    std::string GetName() const { return name_; }
+    int GetPower() const { return power_; }
+    int GetDexterity() const { return dexterity_; }
+    int GetDefense() const { return defense_; }
 };
 
-#endif // SPECIES_H
+#endif
